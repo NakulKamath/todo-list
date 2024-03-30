@@ -24,7 +24,7 @@
                 </li>
             </ul>
             <ul id="projects">
-                <li class="selected">My tasks</li>
+                <li id="project0" class="selected" onclick="projectSelect('project0')">My tasks</li>
             </ul>
             <ul>
                 <li>
@@ -52,23 +52,23 @@
         <form onsubmit="return false">
             <div>
                 <label>Task:</label>
-                <input type="text" id="nameTask" required>
+                <input name='nameTask' type="text" id="nameTask" autocomplete="off">
             </div>
             <div>
                 <label>Priority:</label>
                 <input type="radio" value="low" name="priorityTask" id="lowTask">
-                <label>Low</label>
+                <label for="lowTask">Low</label>
                 <input type="radio" value="medium" name="priorityTask" id="mediumTask" checked>
-                <label>Medium</label>
+                <label for="mediumTask">Medium</label>
                 <input type="radio" value="high" name="priorityTask" id="highTask">
-                <label>High</label>
+                <label for="highTask">High</label>
             </div>
             <div>
                 <label>Due by:</label>
-                <input type="date" id="dateTask" required>
+                <input name='dateTask' type="date" id="dateTask">
             </div>
             <div>
-                <button id="submitTask">Create</button>
+                <button id="submitTask">Create Task</button>
             </div>
         </form>
         <svg id="closeTask" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -80,19 +80,10 @@
         <form onsubmit="return false">
             <div>
                 <label>Project:</label>
-                <input type="text" name="nameProject" required>
+                <input name='nameProject' type="text" id="nameProject" autocomplete="off">
             </div>
             <div>
-                <label>Priority:</label>
-                <input type="radio" value="low" name="priorityProject">
-                <label>Low</label>
-                <input type="radio" value="medium" name="priorityProject" checked>
-                <label>Medium</label>
-                <input type="radio" value="high" name="priorityProject">
-                <label>High</label>
-            </div>
-            <div>
-                <button id="submitProject">Create</button>
+                <button id="submitProject">Create Project</button>
             </div>
         </form>
         <svg id="closeProject" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -100,7 +91,6 @@
           </svg> 
     </div>
     <div id="announcer" class="hidden">
-        Added task "YAY" to My Tasks
     </div>
     <div id="cover" class="hidden">
     </div>
